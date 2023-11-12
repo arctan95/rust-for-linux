@@ -64,4 +64,5 @@ cd dqib_arm64-virt
 qemu-system-aarch64 -machine 'virt' -cpu 'cortex-a57' -m 1G -device virtio-blk-device,drive=hd -drive file=image.qcow2,if=none,id=hd -device virtio-net-device,netdev=net -netdev user,id=net,hostfwd=tcp::2222-:22 -kernel ../arch/arm64/boot/Image -initrd initrd -nographic -append "root=LABEL=rootfs console=ttyAMA0"
 ```
 3. Result
- ![start](/imgs/ex1_linux.png)
+
+![](../imgs/ex1_linux.png)
