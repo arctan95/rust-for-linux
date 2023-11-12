@@ -42,7 +42,7 @@ General setup
 Kernel hacking
         ---> [*] Sample Kernel code
                 ---> [*] Rust samples
-                         --- Rust samples
+                        --- Rust samples
                         <*>   Minimal
                         <*>   Printing macros
                         [*]   Host programs  
