@@ -17,7 +17,7 @@ module! {
 struct RustHelloWorld {}
 
 impl kernel::Module for RustHelloWorld {
-    # function changed here: removed _name: &'static CStr 
+    # function changed here:  _name: &'static CStr removed
     fn init(_module: &'static ThisModule) -> Result<Self> {
         pr_info!("arctan95: Hello World from Rust module");
         Ok(RustHelloWorld {})
