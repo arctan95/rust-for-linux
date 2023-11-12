@@ -38,7 +38,14 @@ make ARCH=arm64 LLVM=1 O=build menuconfig
 #set the following config to yes
 General setup
         ---> [*] Rust support
-
+# rust samples, make sure built-in mode  Legend: [*] built-in  [ ] excluded  <M> module  < > module capable 
+Kernel hacking
+        ---> [*] Sample Kernel code
+                ---> [*] Rust samples
+                         --- Rust samples
+                        <*>   Minimal
+                        <*>   Printing macros
+                        [*]   Host programs  
 make ARCH=arm64 LLVM=1 -j$(nproc)
 ```
 
@@ -59,6 +66,8 @@ make -j$(nproc)
 cd linux/build
 wget -O dqib_arm64-virt.zip https://gitlab.com/api/v4/projects/giomasce%2Fdqib/jobs/artifacts/master/download?job=convert_arm64-virt
 unzip dqib_arm64-virt.zip
+```
+```
 cd dqib_arm64-virt
 # replace kernel to previous built one, mind your work dir
 qemu-system-aarch64 -machine 'virt' -cpu 'cortex-a57' -m 1G -device virtio-blk-device,drive=hd -drive file=image.qcow2,if=none,id=hd -device virtio-net-device,netdev=net -netdev user,id=net,hostfwd=tcp::2222-:22 -kernel ../arch/arm64/boot/Image -initrd initrd -nographic -append "root=LABEL=rootfs console=ttyAMA0"
