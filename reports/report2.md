@@ -1,5 +1,5 @@
 ## Extra modification
-In the latest rust-dev branch, sample code should be
+In the latest `rust-dev` branch, sample code should be
 ```
 // SPDX-License-Identifier: GPL-2.0
 //! Rust helloworld sample.
